@@ -1,0 +1,22 @@
+{% extends "myapp/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<div class="jumborton">
+  {% if re %}
+    <h1>Thank u!</h1>
+  {% else %}
+    <h1>Pls Do it!</h1>
+    <h3>Fill out!</h3>
+
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+      {{ userr_form.as_p}}
+      {{pro_form.as_p}}
+      <input type="submit" name="" value="Register!">
+
+    </form>
+  {% endif %}
+
+</div>
+
+{% endblock %}
